@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <nav>
+        <h1>📚 Book Recommender</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a href="/all_books">All Books</a></li>
+            <li><a href="/Docs">Docs</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2 class="heading">📚 All Books in Our System</h2>
+
+        <div class="book-grid">
+            {% for i in range(titles|length) %}
+            <div class="card">
+                <img src="{{ images[i] }}" alt="Book Image" loading="lazy">
+                <h3>{{ titles[i] }}</h3>
+                <p>{{ authors[i] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if current_page > 1 %}
+            <a href="{{ url_for('all_books', page=current_page-1) }}">&laquo; Prev</a>
+            {% endif %}
+
+            <span>Page {{ current_page }} of {{ total_pages }}</span>
+
+            {% if current_page < total_pages %} <a href="{{ url_for('all_books', page=current_page+1) }}">Next
+                &raquo;</a>
+                {% endif %}
+        </div>
+
+    </div>
+</body>
+
+</html>

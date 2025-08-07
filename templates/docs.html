@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About the Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+     <nav>
+        <h1>📚 Book Recommender</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a href="/all_books">All Books</a></li>
+            <li><a href="/Docs">Docs</a></li>
+        </ul>
+    </nav>
+
+    <div class="container about-section">
+        <h2 class="heading">📖 About This Project</h2>
+        <p>
+            This Book Recommendation System is built using <strong>Machine Learning</strong> techniques to help users discover books based on their preferences.
+        </p>
+
+        <h3>🔍 How It Works</h3>
+        <ul>
+            <li>We use a <strong>Collaborative Filtering model</strong> trained on real user ratings data.</li>
+            <li>Each book is represented in a pivot matrix, and cosine similarity is used to find similar books.</li>
+            <li>The model recommends top 6 books similar to the one entered by the user.</li>
+        </ul>
+
+        <h3>🧠 Tools & Technologies Used</h3>
+        <ul>
+            <li>Python (Flask Framework)</li>
+            <li>Pandas, NumPy, Scikit-learn</li>
+            <li>HTML, CSS, Bootstrap</li>
+            <li>RapidFuzz for fuzzy searching (optional)</li>
+        </ul>
+
+        <h3>💾 Dataset</h3>
+        <p>
+            The data used comes from the <strong>Book-Crossing dataset</strong>, which includes thousands of books, users, and their ratings.
+        </p>
+
+        <h3>📈 Features</h3>
+        <ul>
+            <li>Home page shows most popular books based on ratings and votes</li>
+            <li>Search and get recommendations instantly</li>
+            <li>All books page with pagination</li>
+        </ul>
+
+        <h3>🙋‍♂️ Developer</h3>
+        <p>
+            Developed by <strong>Sonu Shaikh</strong> — a passionate ML and Web Developer. Feel free to connect
+        </p>
+    </div>
+</body>
+</html>
